@@ -1,0 +1,72 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+         "alertName": {
+            "type": "string",
+            "defaultValue": "sns-alert-vm-cpu-utilization"
+        },
+        "scope": {
+            "type": "string",
+            "defaultValue": "/subscriptions/c5c17e97-8ae4-45db-a60a-b0c74a39afdc"
+        },
+        "threshold": {
+            "type": "int",
+            "defaultValue": 66
+        },
+        "severity": {
+            "type": "int",
+            "defaultValue": 3
+        },
+        "enabled": {
+            "type": "bool",
+            "defaultValue": true
+        },
+        "actionGroupExternalId": {
+            "type": "string",
+            "defaultValue": "/subscriptions/6571c99c-07ec-4de0-81a3-f56b995f6004/resourcegroups/sns-azg-p-rgp-100/providers/microsoft.insights/actiongroups/sns-azg-p-acg-001"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "microsoft.insights/metricAlerts",
+            "apiVersion": "2018-03-01",
+            "name": "[parameters('alertName')]",
+            "location": "global",
+            "properties": {
+                "description": "Azure vm CPU utilization threshold alert.",
+                "severity": "[parameters('severity')]",
+                "enabled": "[parameters('enabled')]",
+                "scopes": [
+                    "[parameters('scope')]"
+                ],
+                "evaluationFrequency": "PT1M",
+                "windowSize": "PT5M",
+                "criteria": {
+                    "allOf": [
+                        {
+                            "threshold": "[parameters('threshold')]",
+                            "name": "Metric1",
+                            "metricNamespace": "microsoft.compute/virtualmachines",
+                            "metricName": "Percentage CPU",
+                            "operator": "GreaterThan",
+                            "timeAggregation": "Average",
+                            "criterionType": "StaticThresholdCriterion"
+                        }
+                    ],
+                    "odata.type": "Microsoft.Azure.Monitor.MultipleResourceMultipleMetricCriteria"
+                },
+                "autoMitigate": true,
+                "targetResourceType": "microsoft.compute/virtualmachines",
+                "targetResourceRegion": "westeurope",
+                "actions": [
+                    {
+                        "actionGroupId": "[parameters('actionGroupExternalId')]",
+                        "webHookProperties": {}
+                    }
+                ]
+            }
+        }
+    ]
+}
