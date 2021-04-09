@@ -4,27 +4,27 @@
     "parameters": {
          "alertName": {
             "type": "string",
-            "defaultValue": "@{parameters'DeploymentParametersArray')[0]}"
+            "defaultValue": "@DeploymentParametersArray[0]"
         },
         "scope": {
             "type": "string",
-            "defaultValue": "@{parameters'DeploymentParametersArray')[1]}"
+            "defaultValue": "@DeploymentParametersArray[1]"
         },
         "threshold": {
             "type": "int",
-            "defaultValue": @{parameters'DeploymentParametersArray')[2]}
+            "defaultValue": @DeploymentParametersArray[2]
         },
         "severity": {
             "type": "int",
-            "defaultValue": @{parameters'DeploymentParametersArray')[3]}
+            "defaultValue": @DeploymentParametersArray[3]
         },
         "enabled": {
             "type": "bool",
-            "defaultValue": @{parameters'DeploymentParametersArray')[4]}
+            "defaultValue": @DeploymentParametersArray[4]
         },
         "actionGroupExternalId": {
             "type": "string",
-            "defaultValue": "@{parameters'DeploymentParametersArray')[5]}"
+            "defaultValue": "@DeploymentParametersArray[5]"
         }
     },
     "variables": {},
