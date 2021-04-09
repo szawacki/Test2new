@@ -3,28 +3,22 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
          "alertName": {
-            "type": "string",
-            "defaultValue": "sns-alert-vm-cpu-utilization"
+            "type": "string"
         },
         "scope": {
-            "type": "string",
-            "defaultValue": "/subscriptions/c1c17e97-7ae4-45db-a60a-b0c74a38afdc"
+            "type": "string"
         },
         "threshold": {
-            "type": "int",
-            "defaultValue": 66
+            "type": "int"
         },
         "severity": {
-            "type": "int",
-            "defaultValue": 3
+            "type": "int"
         },
         "enabled": {
-            "type": "bool",
-            "defaultValue": true
+            "type": "bool"
         },
         "actionGroupExternalId": {
-            "type": "string",
-            "defaultValue": "/subscriptions/c1c17e97-7ae4-45db-a60a-b0c74a38afdc/resourcegroups/sns-azg-p-rgp-100/providers/microsoft.insights/actiongroups/sns-azg-p-acg-001"
+            "type": "string"
         }
     },
     "variables": {},
