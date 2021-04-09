@@ -12,15 +12,15 @@
         },
         "threshold": {
             "type": "int",
-            "defaultValue": @{DeploymentParametersArray[2]}
+            "defaultValue": "@{DeploymentParametersArray[2]}"
         },
         "severity": {
             "type": "int",
-            "defaultValue": @{DeploymentParametersArray[3]}
+            "defaultValue": "@{DeploymentParametersArray[3]}"
         },
         "enabled": {
             "type": "bool",
-            "defaultValue": @{DeploymentParametersArray[4]}
+            "defaultValue": "@{DeploymentParametersArray[4]}"
         },
         "actionGroupExternalId": {
             "type": "string",
