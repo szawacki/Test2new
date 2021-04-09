@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+         "alertName": {
+            "value": "<alertname>"
+        },
+        "scope": {
+            "value": "<scope>"
+        },
+        "threshold": {
+            "value": <threshold>
+        },
+        "severity": {
+            "value": <severity>
+        },
+        "enabled": {
+            "value": <enabled>
+        },
+        "actionGroupExternalId": {
+            "value": "<actiongroupexternalid>"
+        }
+    }
+}
