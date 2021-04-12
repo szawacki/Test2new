@@ -1,1 +1,20 @@
-
+{
+	"alertName": {
+		"value": "<alertname>"
+	},
+	"scope": {
+		"value": "<scope>"
+	},
+	"threshold": {
+		"value": <threshold>
+	},
+	"severity": {
+		"value": <severity>
+	},
+	"enabled": {
+		"value": <enabled>
+	},
+	"actionGroupExternalId": {
+		"value": "<actiongroupexternalid>"
+	}
+}
