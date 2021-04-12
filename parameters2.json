@@ -1,1 +1,20 @@
-
+{
+	"alertName": {
+		"value": "@{DeploymentParametersArray[0]}"
+	},
+	"scope": {
+		"value": "@{DeploymentParametersArray[1]}"
+	},
+	"threshold": {
+		"value": @{DeploymentParametersArray[2]}
+	},
+	"severity": {
+		"value": @{DeploymentParametersArray[3]}
+	},
+	"enabled": {
+		"value": @{DeploymentParametersArray[4]}
+	},
+	"actionGroupExternalId": {
+		"value": "@{DeploymentParametersArray[5]}"
+	}
+}
